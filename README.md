@@ -3,7 +3,7 @@ Automatically install and configure ocserv on Ubuntu 18.04 or above. Including o
 
 ## Prerequisite:
 
-You must have a domain managed by cloudflare. You also need to know your **Global API Key** which can be found at the bottom of your "My Profile" section.
+You must have a domain managed by cloudflare. You also need to know your **Global API Key** which can be found at the bottom of the "My Profile" section.
 
 ## Usgage:
 
