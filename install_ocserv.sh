@@ -42,6 +42,7 @@ else
     systemctl restart ocserv
     interface=$(find /sys/class/net ! -type d | xargs --max-args=1 realpath  | awk -F\/ '/pci/{print $NF}')
     iptables -t nat -A POSTROUTING -o $interface -j MASQUERADE
+    apt install iptables-persistent -y
     echo "Success"
     echo "Next, please use \"ocpasswd -g Global,Optimized -c /etc/ocserv/ocpasswd user_name\" to add users and set their passwords"
     exit 0
