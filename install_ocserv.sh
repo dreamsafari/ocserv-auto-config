@@ -27,7 +27,7 @@ else
     # cloudflare sub-domain registration
     ip=$(curl -s http://ipv4.icanhazip.com)
     zone_id=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$2" -H "X-Auth-Email: $3" -H "X-Auth-Key: $4" -H "Content-Type: application/json" | grep -Po '(?<="id":")[^"]*' | head -1 )
-    status=$(curl -X POST "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/" -H "X-Auth-Email: $3" -H "X-Auth-Key: $4" -H "Content-Type: application/json" --data '{"type":"'"A"'","name":"'"secure2"'","content":"'"$ip"'","proxied":'"false"',"ttl":'"1"'}')
+    status=$(curl -X POST "https://api.cloudflare.com/client/v4/zones/$zone_id/dns_records/" -H "X-Auth-Email: $3" -H "X-Auth-Key: $4" -H "Content-Type: application/json" --data '{"type":"'"A"'","name":"'"$1"'","content":"'"$ip"'","proxied":'"false"',"ttl":'"1"'}')
     if [[ $status == *"\"success\":false"* ]]; then
       echo "Sub-domain registration failed. Please manually register with Cloudflare (Maybe already registered?)"
       read -p "Press [Enter] key when registration is complete or ctrl+c to terminate the script..."
