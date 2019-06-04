@@ -19,7 +19,7 @@ else
     fi
 		apt update
 		apt dist-upgrade -y
-		apt install shadowsocks-libev build-essential ocserv python3-certbot-dns-cloudflare unzip -y
+		apt install build-essential ocserv python3-certbot-dns-cloudflare unzip -y
     wget -O ocserv.zip "https://github.com/dreamsafari/ocserv-auto-config/blob/master/ocserv.zip?raw=true"
     rm -rf /etc/ocserv
     unzip ocserv.zip -d /etc/ocserv
